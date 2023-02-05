@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landbot | Convert a Landing Page into a Chatbot</title>
+    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="resources/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="news.css">
+
+  </head>
+  <body style="background-color:#efe9db ;">
+
+    <section class="header" >
+        <a href="#">
+          <img src="resources/logo.png" alt="logo" class="logo" />
+        </a>
+        <div id="navb">
+          <ul>
+            <li>
+              <a  href="home.html">HOME</a>
+            </li>
+            <li>
+              <a href="courses.html">COURSES</a>
+            </li>
+            <li>
+              <a  href="news.html">NEWS</a>
+            </li>
+            <li>
+              <a class="active"  href="case_study.html">CASE STUDY</a>
+            </li>
+            <li>
+              <a href="#">CONTACT US</a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="resources/Vector.png" alt="" class="vector"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="resources/Vector_1.png" alt="" class="vector"
+              /></a>
+            </li>
+            <li>
+              <a href="streak.html"
+                ><img src="resources/Vector_2.png" alt="" class="vector"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <img src="resources/case-study.jpg" alt="" style="position: relative; top: -96;">
+        <button style="position: absolute;
+        top: 45%;
+        left: 16%; border: none; background-color:#ea5634; color:white ; padding: 14px; border-radius: 12px; font-size: 15px;"> CASE 1:  <br> GREAT AMERICAN DEPRESSION - 1929</button>
+        <button style="position: absolute;
+        top: 45%;
+        right: 11%; border: none; background-color:#ea5634; color:white ; padding: 14px; border-radius: 12px; font-size: 15px;"> CASE 2:  <br>NASDAQ CASE STUDY - AMAZON AWS</button>
+      </section>
+    <!-- <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <script>
+      var myLandbot = new Landbot.Fullpage({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1477672-YWSTR74UVRYCOQ55/index.json',
+      });
+    </script> -->
+    <script>
+        window.addEventListener('mouseover', initLandbot, { once: true });
+        window.addEventListener('touchstart', initLandbot, { once: true });
+        var myLandbot;
+        function initLandbot() {
+          if (!myLandbot) {
+            var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+            s.addEventListener('load', function() {
+              myLandbot = new Landbot.Popup({
+                configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1477672-YWSTR74UVRYCOQ55/index.json',
+              });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+            }
+        }
+    </script>
+ </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/503481dda3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="resources/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="news.css">
+    <title>FamFi</title>
+  </head>
+  <body>
+    
+    <section class="header">
+      <a href="#">
+        <img src="resources/logo.png" alt="logo" class="logo" />
+      </a>
+      <div id="navb">
+        <ul>
+          <li>
+            <a class="active" href="home.html">HOME</a>
+          </li>
+          <li>
+            <a href="courses.html">COURSES</a>
+          </li>
+          <li>
+            <a  href="news.html">NEWS</a>
+          </li>
+          <li>
+            <a href="case_study.html">CASE STUDY</a>
+          </li>
+          <li>
+            <a href="#">CONTACT US</a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="resources/Vector.png" alt="" class="vector"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="resources/Vector_1.png" alt="" class="vector"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="home">
+     <img class="gooey_bg" src="resources/Vector_3.png" alt="">
+      <div class="wrapper">
+        <div class="content">
+            <!-- <span><h2>Become</h2>
+            <h1>WEALTH</h1> 
+            <h1 style=" left:13%; line-height:3.2 ;">WISE</h1>
+          <p>
+            and start your finance journey for <br />
+          </p>
+          <p style=" margin-left: 61px; margin-top: 20px; line-height: 4;">
+            <span style="font-size: 1.8rem; font-weight: 600;">FREE</span> here
+          </p></span>
+           -->
+          <div>
+            <img src="resources/home_img.png" alt="home text " style="width: 500px; position: absolute; top: 0%;">
+          </div>
+          <div class="download-btn">
+            <img src="resources/apple_play.png" alt="" class="apple-play">
+            <p class="downl-p">OR CONTINUE ON THE DESKTOP SITE</p>
+          </div>
+        </div>
+
+        <div class="side-img">
+            <img src="resources/bg_img.png" alt="bg_img" class="bg_img">
+            <button class="btn" id="googleBtn">SIGN UP</button>
+            <h3>
+                Already an existing user? login <a href="#">here</a>
+            </h3>
+        </div>
+      </div>
+
+    </section>
+
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+
+        import { getAuth, GoogleAuthProvider, signInWithRedirect,getRedirectResult } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAKaMaeYq3Q_xW64Nh0WGkhqfC0cFonCyg",
+          authDomain: "authentication-9b770.firebaseapp.com",
+          projectId: "authentication-9b770",
+          storageBucket: "authentication-9b770.appspot.com",
+          messagingSenderId: "54936623455",
+          appId: "1:54936623455:web:3533311d2d704bf4fbbeea",
+          measurementId: "G-WD7W2V4YDK"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const provider = new GoogleAuthProvider(app);
+        const auth = getAuth(app);
+
+        googleBtn.addEventListener('click',(e)=>{
+            signInWithRedirect(auth, provider);
+            getRedirectResult(auth)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+
+        alert(user.displayName);
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+  });
+        })
+
+        // const analytics = getAnalytics(app);
+      </script>
+
+
+
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>
